@@ -29,6 +29,7 @@
   --space-md: 1.5rem;
   --space-lg: 2rem;
   --space-xl: 3rem;
+
 }
 
 /* ============================================
@@ -225,3 +226,35 @@ footer {
    - Both figcaption AND paragraph in each panel
 
    ============================================ */
+
+/* ============================================
+   SVG IMAGE STYLING & COLOR THEMING
+   ============================================ */
+
+:root {
+    /* Site color palette in HSL */
+  --var-color-primary: hsl(229, 18%, 65%);
+  --var-color-text: hsl(221, 56%, 9%);
+  --var-color-accent: hsl(235, 30%, 33%);
+  --var-color-background: hsl(236, 35%, 64%);
+  --var-color-secondary: hsl(231, 15%, 61%);
+}
+
+/* Make img tags responsive */
+.panel figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Style for card game SVG image */
+.cards {
+  width: 100%;
+  height: auto;
+  border-radius: 2em;
+  filter: 
+    hue-rotate(300deg)
+    saturate(0.8) 
+}
+
+
