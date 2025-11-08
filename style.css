@@ -30,8 +30,59 @@
   --space-lg: 2rem;
   --space-xl: 3rem;
 
+  /* Type scale variables (1.25 ratio - major third) */
+  --font-size-base: 1rem;      /* 16px */
+  --font-size-sm: 0.875rem;    /* 14px */
+  --font-size-md: 1.125rem;    /* 18px */
+  --font-size-lg: 1.25rem;     /* 20px */
+  --font-size-xl: 1.563rem;    /* 25px */
+  --font-size-2xl: 1.953rem;   /* 31px */
+  --font-size-3xl: 2.441rem;   /* 39px */
+  --font-size-4xl: 3.052rem;   /* 49px */
+
+  /* Line heights for readability */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  --line-height-loose: 2;
+
+  /* Letter spacing */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.05em;
+
+  /* Font weights */
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
 }
 
+/* ============================================
+   FONT STYLES
+   Base font size and line height
+   ============================================ */
+   @font-face {
+    font-family: 'DeliusSwashCaps';
+  src: url(fonts/DeliusSwashCaps-Regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal; 
+    font-display: swap;
+   }
+
+   @font-face {
+    font-family: 'FuzzyBubbles-Regular';
+  src: url(fonts/FuzzyBubbles-Regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+   }
+
+   @font-face {
+    font-family: 'FuzzyBubbles-Bold';
+  src: url(fonts/FuzzyBubbles-Bold.woff2) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+   }
 /* ============================================
    BASIC RESET
    ============================================ */
@@ -45,14 +96,21 @@
    PAGE STRUCTURE
    ============================================ */
 body {
+  background-color: var(--background-fill);
+  color: var(--icon-fill-primary);
+  text-align: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 header {
+  font-family: 'DeliusSwashCaps', cursive;
   padding: var(--space-lg) var(--container-padding);
   text-align: center;
+  font-size: var(--font-size-4xl);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-wide);
 }
 
 footer {
@@ -108,8 +166,12 @@ footer {
 
 /* Panel headings */
 .panel h2 {
-  /* Spacing only - you'll add typography styles */
+  font-family: 'FuzzyBubbles-Bold', cursive;
   margin-bottom: var(--space-xs);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-normal);
 }
 
 /* ============================================
@@ -144,8 +206,12 @@ footer {
    Brief image description (1-2 sentences)
    ============================================ */
 .panel figcaption {
-  /* Basic spacing - you'll add typography */
+  font-family: 'FuzzyBubbles-Bold', cursive;
   margin-top: var(--space-xs);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
 }
 
 /* ============================================
@@ -153,8 +219,12 @@ footer {
    Narrative story text (2-4 sentences)
    ============================================ */
 .panel p {
-  /* Basic spacing - you'll add typography */
+  font-family: 'FuzzyBubbles-Regular', sans-serif;
   margin-top: var(--space-xs);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+  letter-spacing: var(--letter-spacing-normal);
 }
 
 /* ============================================
@@ -166,6 +236,8 @@ footer {
 @media (min-width: 768px) {
   :root {
     --container-padding: 3rem;
+    /* Slightly larger type on tablets */
+    --font-size-base: 1.0625rem;  /* 17px */
   }
 }
 
@@ -174,6 +246,9 @@ footer {
   :root {
     --grid-gap: 2.5rem;
     --container-padding: 4rem;
+    /* Larger type for desktop reading */
+    --font-size-base: 1.125rem;  /* 18px */
+    --font-size-4xl: 3.5rem;     /* Larger header */
   }
 }
 
@@ -232,12 +307,13 @@ footer {
    ============================================ */
 
 :root {
-    /* Site color palette in HSL */
+  /* Site color palette in HSL */
   --icon-fill-primary: hsl(229, 18%, 65%);
-  --icon-fill-text: hsl(221, 56%, 9%);
   --icon-fill-accent: hsl(235, 30%, 33%);
   --icon-fill-background: hsl(236, 35%, 64%);
   --icon-fill-secondary: hsl(231, 15%, 61%);
+
+  --background-fill: hsl(221, 56%, 9%);
 }
 
 /* Make img tags responsive */
@@ -251,23 +327,34 @@ footer {
 .cards {
   width: 100%;
   height: auto;
+  border: 2px solid var(--icon-fill-secondary);
   border-radius: 3rem;
-  border-color: var(--icon-fill-secondary);
-  border-style: solid;
-  filter: 
-    hue-rotate(300deg)
-    saturate(0.8) 
+  transition: filter 0.5s ease-in-out;
+  filter:
+    hue-rotate(310deg)
 }
 
 .cards:hover {
-  filter: brightness(0.5)
+  filter:
+    hue-rotate(300deg)
+    drop-shadow(0 0 1.5rem var(--icon-fill-primary))
+    brightness(1.0);
 }
 
+/* Style for TV SVG image */
 .tv {
   width: 100%;
   height: auto;
   transition: filter 0.5s ease-in-out;
+  border: 2px solid var(--icon-fill-secondary);
+  border-radius: 3rem;
+  border-color: var(--icon-fill-primary);
+  border-style: solid;
 }
 .tv:hover {
-  filter: brightness(1.1);
+   filter:
+    saturate(0.8)
+    drop-shadow(0 0 1.5rem var(--icon-fill-secondary))
+    brightness(0.9);
 }
+
