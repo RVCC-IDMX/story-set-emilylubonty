@@ -233,11 +233,11 @@ footer {
 
 :root {
     /* Site color palette in HSL */
-  --var-color-primary: hsl(229, 18%, 65%);
-  --var-color-text: hsl(221, 56%, 9%);
-  --var-color-accent: hsl(235, 30%, 33%);
-  --var-color-background: hsl(236, 35%, 64%);
-  --var-color-secondary: hsl(231, 15%, 61%);
+  --icon-fill-primary: hsl(229, 18%, 65%);
+  --icon-fill-text: hsl(221, 56%, 9%);
+  --icon-fill-accent: hsl(235, 30%, 33%);
+  --icon-fill-background: hsl(236, 35%, 64%);
+  --icon-fill-secondary: hsl(231, 15%, 61%);
 }
 
 /* Make img tags responsive */
@@ -251,10 +251,23 @@ footer {
 .cards {
   width: 100%;
   height: auto;
-  border-radius: 2em;
+  border-radius: 3rem;
+  border-color: var(--icon-fill-secondary);
+  border-style: solid;
   filter: 
     hue-rotate(300deg)
     saturate(0.8) 
 }
 
+.cards:hover {
+  filter: brightness(0.5)
+}
 
+.tv {
+  width: 100%;
+  height: auto;
+  transition: filter 0.5s ease-in-out;
+}
+.tv:hover {
+  filter: brightness(1.1);
+}
