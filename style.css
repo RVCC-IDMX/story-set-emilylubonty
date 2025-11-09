@@ -97,7 +97,7 @@
    ============================================ */
 body {
   background-color: var(--background-fill);
-  color: var(--icon-fill-primary);
+  color: var(--icon-fill-text);
   text-align: center;
   min-height: 100vh;
   display: flex;
@@ -113,7 +113,15 @@ header {
   letter-spacing: var(--letter-spacing-wide);
 }
 
+h1:hover {
+  color: var(--icon-fill-accent);
+  transition-duration: 0.5s;
+  filter: 
+  drop-shadow (0 0 1em var(--icon-fill-accent));
+}
+
 footer {
+  font-family: 'FuzzyBubbles-Regular', sans-serif;
   padding: var(--space-lg) var(--container-padding);
   margin-top: auto;
   text-align: center;
@@ -308,11 +316,20 @@ footer {
 
 :root {
   /* Site color palette in HSL */
-  --icon-fill-primary: hsl(229, 18%, 65%);
-  --icon-fill-accent: hsl(235, 30%, 33%);
-  --icon-fill-background: hsl(236, 35%, 64%);
-  --icon-fill-secondary: hsl(231, 15%, 61%);
+  --icon-fill-text: hsl(228, 100%, 89%);
+  --icon-fill-accent: hsl(290, 66%, 59%);
+  --icon-fill-background: hsl(273, 23%, 38%);
+  --icon-fill-secondary: hsl(282, 25%, 52%);
+  --icon-fill-tertiary: hsl(292, 31%, 19%);
 
+  --icon-fill-neutral: hsl(0 0% 88%);
+  --icon-fill-neutral-light: hsl(0 0% 94%);
+  --icon-fill-white: hsl(0 0% 100%);
+
+  --icon-fill-skin: hsl(1 100% 83%);
+  --icon-fill-skin-shadow: hsl(0 75% 76%);
+  --icon-fill-skin-blush: hsl(359 36% 55%);
+ 
   --background-fill: hsl(221, 56%, 9%);
 }
 
@@ -329,15 +346,14 @@ footer {
   height: auto;
   border: 2px solid var(--icon-fill-secondary);
   border-radius: 3rem;
+  border-color: var(--icon-fill-text);
+  border-style: solid;
   transition: filter 0.5s ease-in-out;
-  filter:
-    hue-rotate(310deg)
 }
 
 .cards:hover {
   filter:
-    hue-rotate(300deg)
-    drop-shadow(0 0 1.5rem var(--icon-fill-primary))
+    drop-shadow(0 0 1.5rem var(--icon-fill-accent))
     brightness(1.0);
 }
 
@@ -348,22 +364,84 @@ footer {
   transition: filter 0.5s ease-in-out;
   border: 2px solid var(--icon-fill-secondary);
   border-radius: 3rem;
-  border-color: var(--icon-fill-primary);
+  border-color: var(--icon-fill-text);
   border-style: solid;
 }
 .tv:hover {
    filter:
     saturate(0.8)
-    drop-shadow(0 0 1.5rem var(--icon-fill-secondary))
+    drop-shadow(0 0 1.5rem var(--icon-fill-accent))
     brightness(0.9);
 }
 
+/* Style for dinner SVG image */
 .dinner {
   width: 100%;
   height: auto;
   transition: filter 0.5s ease-in-out;
   border: 2px solid var(--icon-fill-secondary);
   border-radius: 3rem;
-  border-color: var(--icon-fill-primary);
+  border-color: var(--icon-fill-text);
   border-style: solid;
+}
+
+.dinner:hover {
+    filter:
+      saturate(1.2)
+      drop-shadow(0 0 1.5rem var(--icon-fill-accent))
+      brightness(1.1);
+}
+
+/* Style for skincare SVG image */
+.skincare {
+  width: 100%;
+  height: auto;
+  transition: filter 0.5s ease-in-out;
+  border: 2px solid var(--icon-fill-secondary);
+  border-radius: 3rem;
+  border-color: var(--icon-fill-text);
+  border-style: solid;
+}
+
+.skincare:hover {
+    filter:
+      saturate(1.2)
+      drop-shadow(0 0 1.5rem var(--icon-fill-accent))
+      brightness(1.1);
+}
+
+/* Style for talking SVG image */
+.talking {
+  width: 100%;
+  height: auto;
+  transition: filter 0.5s ease-in-out;
+  border: 2px solid var(--icon-fill-secondary);
+  border-radius: 3rem;
+  border-color: var(--icon-fill-text);
+  border-style: solid;
+}
+
+.talking:hover {
+    filter:
+      saturate(1.2)
+      drop-shadow(0 0 1.5rem var(--icon-fill-accent))
+      brightness(1.1);
+}
+
+/* Style for sleeping SVG image */
+.sleep {
+  width: 100%;
+  height: auto;
+  transition: filter 0.5s ease-in-out;
+  border: 2px solid var(--icon-fill-secondary);
+  border-radius: 3rem;
+  border-color: var(--icon-fill-text);
+  border-style: solid;
+}
+
+.sleep:hover {
+    filter:
+      saturate(0.5rem)
+      drop-shadow(0 0 1.5rem var(--icon-fill-accent))
+      brightness(1.1);
 }
