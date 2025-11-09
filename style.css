@@ -97,7 +97,7 @@
    ============================================ */
 body {
   background-color: var(--background-fill);
-  color: var(--icon-fill-text);
+  color: var(--icon-fill-white);
   text-align: center;
   min-height: 100vh;
   display: flex;
@@ -117,7 +117,7 @@ h1:hover {
   color: var(--icon-fill-accent);
   transition-duration: 0.5s;
   filter: 
-  drop-shadow (0 0 1em var(--icon-fill-accent));
+  drop-shadow(0 0 1em var(--icon-fill-accent));
 }
 
 footer {
@@ -316,7 +316,7 @@ footer {
 
 :root {
   /* Site color palette in HSL */
-  --icon-fill-text: hsl(228, 100%, 89%);
+  --icon-fill-text: hsl(295, 43%, 71%);
   --icon-fill-accent: hsl(290, 66%, 59%);
   --icon-fill-background: hsl(273, 23%, 38%);
   --icon-fill-secondary: hsl(282, 25%, 52%);
@@ -433,7 +433,7 @@ footer {
   width: 100%;
   height: auto;
   transition: filter 0.5s ease-in-out;
-  border: 2px solid var(--icon-fill-secondary);
+  border: 2px solid var(--icon-fill-primary);
   border-radius: 3rem;
   border-color: var(--icon-fill-text);
   border-style: solid;
@@ -441,7 +441,7 @@ footer {
 
 .sleep:hover {
     filter:
-      saturate(0.5rem)
+  saturate(0.5)
       drop-shadow(0 0 1.5rem var(--icon-fill-accent))
       brightness(1.1);
 }
