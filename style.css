@@ -358,3 +358,12 @@ footer {
     brightness(0.9);
 }
 
+.dinner {
+  width: 100%;
+  height: auto;
+  transition: filter 0.5s ease-in-out;
+  border: 2px solid var(--icon-fill-secondary);
+  border-radius: 3rem;
+  border-color: var(--icon-fill-primary);
+  border-style: solid;
+}
