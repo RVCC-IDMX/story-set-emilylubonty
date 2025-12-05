@@ -5,6 +5,34 @@
    ============================================ */
 
 /* ============================================
+   FONT STYLES
+   Base font size and line height
+   ============================================ */
+@font-face {
+  font-family: 'DeliusSwashCaps';
+  src: url(fonts/DeliusSwashCaps-Regular.woff2) format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FuzzyBubbles-Regular';
+  src: url(fonts/FuzzyBubbles-Regular.woff2) format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FuzzyBubbles-Bold';
+  src: url(fonts/FuzzyBubbles-Bold.woff2) format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================
    LAYOUT CUSTOM PROPERTIES
    Adjust these values to customize spacing
    ============================================ */
@@ -31,14 +59,22 @@
   --space-xl: 3rem;
 
   /* Type scale variables (1.25 ratio - major third) */
-  --font-size-base: 1rem;      /* 16px */
-  --font-size-sm: 0.875rem;    /* 14px */
-  --font-size-md: 1.125rem;    /* 18px */
-  --font-size-lg: 1.25rem;     /* 20px */
-  --font-size-xl: 1.563rem;    /* 25px */
-  --font-size-2xl: 1.953rem;   /* 31px */
-  --font-size-3xl: 2.441rem;   /* 39px */
-  --font-size-4xl: 3.052rem;   /* 49px */
+  --font-size-base: 1rem;
+  /* 16px */
+  --font-size-sm: 0.875rem;
+  /* 14px */
+  --font-size-md: 1.125rem;
+  /* 18px */
+  --font-size-lg: 1.25rem;
+  /* 20px */
+  --font-size-xl: 1.563rem;
+  /* 25px */
+  --font-size-2xl: 1.953rem;
+  /* 31px */
+  --font-size-3xl: 2.441rem;
+  /* 39px */
+  --font-size-4xl: 3.052rem;
+  /* 49px */
 
   /* Line heights for readability */
   --line-height-tight: 1.2;
@@ -56,33 +92,8 @@
   --font-weight-bold: 700;
 }
 
-/* ============================================
-   FONT STYLES
-   Base font size and line height
-   ============================================ */
-   @font-face {
-    font-family: 'DeliusSwashCaps';
-  src: url(fonts/DeliusSwashCaps-Regular.woff2) format('woff2');
-    font-weight: 400;
-    font-style: normal; 
-    font-display: swap;
-   }
 
-   @font-face {
-    font-family: 'FuzzyBubbles-Regular';
-  src: url(fonts/FuzzyBubbles-Regular.woff2) format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-   }
 
-   @font-face {
-    font-family: 'FuzzyBubbles-Bold';
-  src: url(fonts/FuzzyBubbles-Bold.woff2) format('woff2');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-   }
 /* ============================================
    BASIC RESET
    ============================================ */
@@ -116,8 +127,8 @@ header {
 h1:hover {
   color: var(--icon-fill-accent);
   transition-duration: 0.5s;
-  filter: 
-  drop-shadow(0 0 1em var(--icon-fill-accent));
+  filter:
+    drop-shadow(0 0 1em var(--icon-fill-accent));
 }
 
 footer {
@@ -245,7 +256,8 @@ footer {
   :root {
     --container-padding: 3rem;
     /* Slightly larger type on tablets */
-    --font-size-base: 1.0625rem;  /* 17px */
+    --font-size-base: 1.0625rem;
+    /* 17px */
   }
 }
 
@@ -255,8 +267,10 @@ footer {
     --grid-gap: 2.5rem;
     --container-padding: 4rem;
     /* Larger type for desktop reading */
-    --font-size-base: 1.125rem;  /* 18px */
-    --font-size-4xl: 3.5rem;     /* Larger header */
+    --font-size-base: 1.125rem;
+    /* 18px */
+    --font-size-4xl: 3.5rem;
+    /* Larger header */
   }
 }
 
@@ -329,7 +343,7 @@ footer {
   --icon-fill-skin: hsl(1 100% 83%);
   --icon-fill-skin-shadow: hsl(0 75% 76%);
   --icon-fill-skin-blush: hsl(359 36% 55%);
- 
+
   --background-fill: hsl(221, 56%, 9%);
 }
 
@@ -353,8 +367,7 @@ footer {
 
 .cards:hover {
   filter:
-    drop-shadow(0 0 1.5rem var(--icon-fill-accent))
-    brightness(1.0);
+    drop-shadow(0 0 1.5rem var(--icon-fill-accent)) brightness(1.0);
 }
 
 /* Style for TV SVG image */
@@ -367,11 +380,10 @@ footer {
   border-color: var(--icon-fill-text);
   border-style: solid;
 }
+
 .tv:hover {
-   filter:
-    saturate(0.8)
-    drop-shadow(0 0 1.5rem var(--icon-fill-accent))
-    brightness(0.9);
+  filter:
+    saturate(0.8) drop-shadow(0 0 1.5rem var(--icon-fill-accent)) brightness(0.9);
 }
 
 /* Style for dinner SVG image */
@@ -386,10 +398,8 @@ footer {
 }
 
 .dinner:hover {
-    filter:
-      saturate(1.2)
-      drop-shadow(0 0 1.5rem var(--icon-fill-accent))
-      brightness(1.1);
+  filter:
+    saturate(1.2) drop-shadow(0 0 1.5rem var(--icon-fill-accent)) brightness(1.1);
 }
 
 /* Style for skincare SVG image */
@@ -404,10 +414,8 @@ footer {
 }
 
 .skincare:hover {
-    filter:
-      saturate(1.2)
-      drop-shadow(0 0 1.5rem var(--icon-fill-accent))
-      brightness(1.1);
+  filter:
+    saturate(1.2) drop-shadow(0 0 1.5rem var(--icon-fill-accent)) brightness(1.1);
 }
 
 /* Style for talking SVG image */
@@ -422,10 +430,8 @@ footer {
 }
 
 .talking:hover {
-    filter:
-      saturate(1.2)
-      drop-shadow(0 0 1.5rem var(--icon-fill-accent))
-      brightness(1.1);
+  filter:
+    saturate(1.2) drop-shadow(0 0 1.5rem var(--icon-fill-accent)) brightness(1.1);
 }
 
 /* Style for sleeping SVG image */
@@ -440,8 +446,12 @@ footer {
 }
 
 .sleep:hover {
-    filter:
-  saturate(0.5)
-      drop-shadow(0 0 1.5rem var(--icon-fill-accent))
-      brightness(1.1);
+  filter:
+    saturate(0.5) drop-shadow(0 0 1.5rem var(--icon-fill-accent)) brightness(1.1);
+}
+
+footer a {
+  color: var(--icon-fill-accent);
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
 }
